@@ -17,6 +17,10 @@
 #ifndef _HOTSTUFF_CLIENT_H
 #define _HOTSTUFF_CLIENT_H
 
+// #define HOTSTUFF_ENABLE_BENCHMARK
+#define HOTSTUFF_CMD_RESPSIZE 0
+#define HOTSTUFF_CMD_REQSIZE 0
+
 #include "salticidae/msg.h"
 #include "hotstuff/type.h"
 #include "hotstuff/entity.h"

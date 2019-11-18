@@ -1,0 +1,42 @@
+2019-11-18 09:41:24.434513 [net info] starting all threads...
+2019-11-18 09:41:24.434759 [net warn] ignoring option name in conf file: block-size
+2019-11-18 09:41:24.434801 [net warn] ignoring option name in conf file: pace-maker
+2019-11-18 09:41:24.434832 [net info] loaded configuration from hotstuff.conf
+2019-11-18 09:41:24.435016 [hotstuff info] nfaulty = 1
+2019-11-18 09:41:24.435458 [net info] created <Conn fd=11 addr=<NetAddr 127.0.0.1:20000> mode=active>
+2019-11-18 09:41:24.435570 [net info] connected to remote <Conn fd=11 addr=<NetAddr 127.0.0.1:20000> mode=active>
+2019-11-18 09:41:24.435640 [net info] worker 3d402700 got <Conn fd=11 addr=<NetAddr 127.0.0.1:20000> mode=active>
+2019-11-18 09:41:24.436564 [net info] created <Conn fd=19 addr=<NetAddr 127.0.0.1:20001> mode=active>
+2019-11-18 09:41:24.436682 [net info] connected to remote <Conn fd=19 addr=<NetAddr 127.0.0.1:20001> mode=active>
+2019-11-18 09:41:24.437282 [net info] created <Conn fd=21 addr=<NetAddr 127.0.0.1:20002> mode=active>
+2019-11-18 09:41:24.437342 [net info] worker 3d402700 got <Conn fd=19 addr=<NetAddr 127.0.0.1:20001> mode=active>
+2019-11-18 09:41:24.437664 [net info] created <Conn fd=23 addr=<NetAddr 127.0.0.1:20003> mode=active>
+2019-11-18 09:41:24.437717 [net info] connected to remote <Conn fd=21 addr=<NetAddr 127.0.0.1:20002> mode=active>
+2019-11-18 09:41:24.437785 [net info] worker 3d402700 got <Conn fd=21 addr=<NetAddr 127.0.0.1:20002> mode=active>
+2019-11-18 09:41:24.437820 [net info] connected to remote <Conn fd=23 addr=<NetAddr 127.0.0.1:20003> mode=active>
+2019-11-18 09:41:24.437870 [net info] worker 3d402700 got <Conn fd=23 addr=<NetAddr 127.0.0.1:20003> mode=active>
+2019-11-18 09:41:35.324946 [hotstuff info] 10.887016
+2019-11-18 09:41:35.325025 [hotstuff info] 10.887134
+2019-11-18 09:41:35.325050 [hotstuff info] 10.887180
+2019-11-18 09:41:35.325091 [hotstuff info] 10.887212
+2019-11-18 09:41:47.316435 [hotstuff info] 11.991360
+2019-11-18 09:41:47.316480 [hotstuff info] 11.991439
+2019-11-18 09:41:47.316521 [hotstuff info] 11.991407
+2019-11-18 09:41:47.316551 [hotstuff info] 11.991544
+2019-11-18 09:41:59.340422 [hotstuff info] 12.023879
+2019-11-18 09:41:59.340487 [hotstuff info] 12.023914
+2019-11-18 09:41:59.340516 [hotstuff info] 12.024013
+2019-11-18 09:41:59.340542 [hotstuff info] 12.024073
+2019-11-18 09:42:11.365332 [hotstuff info] 12.024768
+2019-11-18 09:42:11.365400 [hotstuff info] 12.024890
+2019-11-18 09:42:11.365433 [hotstuff info] 12.024902
+2019-11-18 09:42:11.365465 [hotstuff info] 12.024989
+2019-11-18 09:42:23.364777 [hotstuff info] 11.999320
+2019-11-18 09:42:23.364832 [hotstuff info] 11.999332
+2019-11-18 09:42:23.364871 [hotstuff info] 11.999448
+2019-11-18 09:42:23.364904 [hotstuff info] 11.999512
+2019-11-18 09:42:34.956830 [net info] stopping all threads...
+2019-11-18 09:42:34.959469 [net info] destroyed <Conn fd=23 addr=<NetAddr 127.0.0.1:20003> mode=active>
+2019-11-18 09:42:34.959641 [net info] destroyed <Conn fd=21 addr=<NetAddr 127.0.0.1:20002> mode=active>
+2019-11-18 09:42:34.959763 [net info] destroyed <Conn fd=11 addr=<NetAddr 127.0.0.1:20000> mode=active>
+2019-11-18 09:42:34.959881 [net info] destroyed <Conn fd=19 addr=<NetAddr 127.0.0.1:20001> mode=active>
