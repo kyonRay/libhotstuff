@@ -1,7 +1,7 @@
 version: '2'
 services:
   s0: 
-    image: centos_hotstuff_s0:v1
+    image: kyonray/centos_hotstuff_s0:v2
     container_name: s0
     hostname: s0
     networks: 
@@ -19,7 +19,7 @@ services:
     stdin_open: true
 
   s1: 
-    image: centos_hotstuff_s1:v1
+    image: kyonray/centos_hotstuff_s1:v2
     container_name: s1
     hostname: s1
     networks: 
@@ -39,7 +39,7 @@ services:
     stdin_open: true
 
   s2: 
-    image: centos_hotstuff_s2:v1
+    image: kyonray/centos_hotstuff_s2:v2
     container_name: s2
     hostname: s2
     networks: 
@@ -59,7 +59,7 @@ services:
     stdin_open: true
 
   s3: 
-    image: centos_hotstuff_s3:v1
+    image: kyonray/centos_hotstuff_s3:v2
     container_name: s3
     hostname: s3
     networks: 
