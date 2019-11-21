@@ -1,0 +1,109 @@
+version: '2'
+services:
+  s0: 
+    image: centos_hotstuff_s0:v1
+    container_name: s0
+    hostname: s0
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.2
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    ports:
+      - "19010:22"
+    tty: true
+    stdin_open: true
+
+  s1: 
+    image: centos_hotstuff_s1:v1
+    container_name: s1
+    hostname: s1
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.3
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - s0
+    ports:
+      - "19011:22"
+    tty: true
+    stdin_open: true
+
+  s2: 
+    image: centos_hotstuff_s2:v1
+    container_name: s2
+    hostname: s2
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.4
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - s1
+    ports:
+      - "19012:22"
+    tty: true
+    stdin_open: true
+
+  s3: 
+    image: centos_hotstuff_s3:v1
+    container_name: s3
+    hostname: s3
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.5
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - s2
+    ports:
+      - "19013:22"
+    tty: true
+    stdin_open: true
+
+  test_env: 
+    image: kyonray/consensus_testenv:v1
+    container_name: test_env
+    hostname: test_env
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.6
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - s3
+    ports:
+      - "19000:22"
+    tty: true
+
+networks:
+  app_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.222.0.0/24
+        gateway: 172.222.0.1
