@@ -78,8 +78,88 @@ services:
     tty: true
     stdin_open: true
 
+  c0: 
+    image: kyonray/centos_hotstuff_s0:v2
+    container_name: c0
+    hostname: c0
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.12
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - s3
+    ports:
+      - "19020:22"
+    tty: true
+    stdin_open: true
+  
+  c1: 
+    image: kyonray/centos_hotstuff_s1:v2
+    container_name: c1
+    hostname: c1
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.13
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - c0
+    ports:
+      - "19021:22"
+    tty: true
+    stdin_open: true
+  
+  c2: 
+    image: kyonray/centos_hotstuff_s2:v2
+    container_name: c2
+    hostname: c2
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.14
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - c1
+    ports:
+      - "19022:22"
+    tty: true
+    stdin_open: true
+  
+  c3: 
+    image: kyonray/centos_hotstuff_s3:v2
+    container_name: c3
+    hostname: c3
+    networks: 
+      app_net:
+        ipv4_address: 172.222.0.15
+    extra_hosts: 
+      s0: 172.222.0.2
+      s1: 172.222.0.3
+      s2: 172.222.0.4
+      s3: 172.222.0.5
+      test_env: 172.222.0.6
+    depends_on:
+      - c2
+    ports:
+      - "19023:22"
+    tty: true
+    stdin_open: true
+
   test_env: 
-    image: kyonray/consensus_testenv:v1
+    image: kyonray/consensus_testenv:v2
     container_name: test_env
     hostname: test_env
     networks: 
@@ -90,9 +170,13 @@ services:
       s1: 172.222.0.3
       s2: 172.222.0.4
       s3: 172.222.0.5
+      c0: 172.222.0.12
+      c1: 172.222.0.13
+      c2: 172.222.0.14
+      c3: 172.222.0.15
       test_env: 172.222.0.6
     depends_on:
-      - s3
+      - c3
     ports:
       - "19000:22"
     tty: true
